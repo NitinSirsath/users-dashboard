@@ -1,40 +1,47 @@
-import React, {useState,useEffect} from 'react'
-import {UserAccountContainer} from '../styles/usersAccount.style'
-import backgroundImage from '../assets/bg.jpg'
-import UserAccountCard from '../components/UserAccountCard'
+import React, { useState, useEffect } from "react";
+import {
+  Container,
+  UserAccountContainer,
+  UserAccountCardContainer,
+  UserAccountHeading
+} from "../styles/usersAccount.style";
+import backgroundImage from "../assets/bg.jpg";
+import UserAccountCard from "../components/UserAccountCard";
 
 const UsersAccount = () => {
-    const [users, setUsers] = useState([])
-    const [loading, setLoading] = useState(false)
+  const [usersData, setUsersData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        loadUsersData()
-    }, [])
+  useEffect(() => {
+    loadUsersData();
+  }, []);
 
-    const loadUsersData = async () => {
-        setLoading(true)
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const data = await response.json()
-        setUsers(data)
-        setLoading(false)
-    }
-    console.log(users);
+  const loadUsersData = async () => {
+    setLoading(true);
+    const response = await fetch(`${import.meta.env.VITE_API_ENDPOINT}`);
+    const data = await response.json();
+    setUsersData(data.users);
+    setLoading(false);
+  };
+  console.log({ usersData });
   return (
-    <UserAccountContainer background={backgroundImage}>
-        
-        <div>
-            <h2>Select an account</h2>
-            <div>
-                {loading ? <h2>Loading...</h2> : users.map((user) => {
-                    return (
-                            <UserAccountCard user={user}/>
-                    )
-                })} 
-            </div>
-        </div>
+    <Container background={backgroundImage}>
+      <UserAccountContainer>
+        <UserAccountHeading>
+          Select an account
+        </UserAccountHeading>
+        <UserAccountCardContainer>
+          {loading ? (
+            <h2>Loading...</h2>
+          ) : (
+            usersData.map((user) => {
+              return <UserAccountCard user={user} />;
+            })
+          )}
+        </UserAccountCardContainer>
+      </UserAccountContainer>
+    </Container>
+  );
+};
 
-    </UserAccountContainer>
-  )
-}
-
-export default UsersAccount
+export default UsersAccount;

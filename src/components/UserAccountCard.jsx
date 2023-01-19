@@ -1,8 +1,13 @@
 import React from 'react'
+import {Container,ImageContainer,UserName} from '../styles/userAccountCard.style'
 
 const UserAccountCard = ({user}) => {
+    
   return (
-    <div>{user.name}</div>
+    <Container>
+        <ImageContainer background={user.profilepicture}></ImageContainer>
+        <UserName>{user.name}</UserName>
+    </Container>
   )
 }
 
