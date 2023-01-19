@@ -8,8 +8,8 @@ import {
 import backgroundImage from "../assets/bg.jpg";
 import UserAccountCard from "../components/UserAccountCard";
 
-const UsersAccount = () => {
-  const [usersData, setUsersData] = useState([]);
+const UsersAccount = ({usersData,setUsersData}) => {
+//   const [usersData, setUsersData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const UsersAccount = () => {
     setUsersData(data.users);
     setLoading(false);
   };
-  console.log({ usersData });
+  
   return (
     <Container background={backgroundImage}>
       <UserAccountContainer>
