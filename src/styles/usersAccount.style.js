@@ -36,6 +36,7 @@ background-color: #FFFFFF;
 padding: 10px 30px;
 overflow-y: scroll;
 height: 300px;
+border-radius: 20px;
 ::-webkit-scrollbar-track
 {
 	border: none;
