@@ -15,7 +15,6 @@ export const Container = styled.div`
 export const UserAccountContainer = styled.div`
 width: 500px;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 border-radius: 22px;
 padding-bottom: 16px;
 background-color: white;
