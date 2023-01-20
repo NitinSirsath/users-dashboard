@@ -1,18 +1,32 @@
-import React, { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState,useEffect} from "react";
+import { Outlet, useParams } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import {Container} from '../styles/userDetails.style'
+
+export const UserDetailsContext = React.createContext(); 
 
 const UserDetails = ({usersData,setUsersData}) => {
+  // const [userData, setUserData] = useState({})
 
     const { id } = useParams();
-  const [user, setUser] = useState({})
+  
+  useEffect(() => {
 
+  }, [id]);
 
-  const userDetails = usersData.find((user) => {
+  // const loadUser = async () => {
+  //   const response = await fetch(`${import.meta.env.VITE_API_ENDPOINT}/${id}`);
+  //   const data = await response.json();
+    
+  // }
+
+  const userDetails = usersData?.find((user) => {
     return Number(user.id) === Number(id);
   });
 
-  console.log(userDetails);
-    
+
+    // I want to fetch the user data from the API endpoint and set it to the user state but I am getting an CORS error 
+
 //   useEffect(() => {
 //     loadUser()
 //   },[])
@@ -24,7 +38,12 @@ const UserDetails = ({usersData,setUsersData}) => {
 //     }
 //     console.log(user,'user');
   return (
-    <div>{userDetails.name}</div>
+    <Container>
+        <Navbar />
+        <UserDetailsContext.Provider value={userDetails}>
+            <Outlet />
+        </UserDetailsContext.Provider>
+    </Container>
   )
 }
 

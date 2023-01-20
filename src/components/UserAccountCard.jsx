@@ -13,9 +13,9 @@ const LinkStyle = styled(Link)`
 
 const UserAccountCard = ({ user }) => {
   return (
-    <Container>
+    <Container key={user.id}>
       <ImageContainer background={user.profilepicture}></ImageContainer>
-      <LinkStyle to={`/user/${user.id}`}>
+      <LinkStyle to={`/user/${user.id}/details`}>
         <UserName>{user.name}</UserName>
       </LinkStyle>
     </Container>

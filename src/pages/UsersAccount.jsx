@@ -35,7 +35,7 @@ const UsersAccount = ({usersData,setUsersData}) => {
             <h2>Loading...</h2>
           ) : (
             usersData.map((user) => {
-              return <UserAccountCard user={user} />;
+              return <UserAccountCard key={user.id} user={user} />;
             })
           )}
         </UserAccountCardContainer>
