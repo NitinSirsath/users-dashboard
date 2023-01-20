@@ -35,7 +35,7 @@ const ProfileDetails = () => {
           <ProfileImage background={userDetails.profilepicture}></ProfileImage>
           <h3>{userDetails.name}</h3>
           {showAccountsCard && (
-            <AccountSwitchingCard userDetails={globalUserData} />
+            <AccountSwitchingCard currentUserDetails={userDetails} userDetails={globalUserData} />
           )}
         </ProfileDetailsContainer>
       </HeaderContainer>

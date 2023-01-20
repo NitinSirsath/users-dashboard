@@ -26,7 +26,7 @@ export const LinkItem = styled(Link)`
 
     p{
         border-bottom: 1px solid lightgray;
-        width: 170px;
+        width: 220px;
         padding: 13px 0px;
     }
 `

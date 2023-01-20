@@ -40,10 +40,6 @@ export const ProfileDetailsContainer = styled.div`
     align-items: center;
     gap: 10px;
     
-        p{
-            position: absolute;
-            top: 23%;
-        }
 `
 
 export const BriefDetailsContainer = styled.div`
