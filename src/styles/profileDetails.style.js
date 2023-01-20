@@ -117,3 +117,23 @@ font-weight: 700;
 }
 
 `
+
+export const CoodinatesWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px;
+
+    span{
+        color: #9A9A9A;
+        font-weight: bold;
+    }
+
+    p{
+        font-weight: bolder;
+        font-size: small;
+        color: #545454;
+        
+    }
+`

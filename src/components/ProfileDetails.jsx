@@ -14,9 +14,11 @@ import {
   BriefDetailsProfilePicture,
   BriefDetailsProfileWrapper,
   LabelWrapper,
-  LabelValueWrapper
+  LabelValueWrapper,
+  CoodinatesWrapper
 } from "../styles/profileDetails.style";
 import MapComponent from "./MapComponent";
+import ChatComponent from "./ChatComponent";
 
 const ProfileDetails = () => {
   const userDetails = useContext(UserDetailsContext);
@@ -92,7 +94,12 @@ const ProfileDetails = () => {
           </BriefDetailsProfileWrapper>
          <div style={{height:'300px', width: '500px'}}>
          <MapComponent userDetails={userDetails}/>
+         <CoodinatesWrapper>
+          <p><span>Lat :</span> {userDetails.address.geo.lat}</p>
+          <p><span>Long :</span> {userDetails.address.geo.lng}</p>
+         </CoodinatesWrapper>
          </div>
+         {/* <ChatComponent /> */}
         </BriefDetailsRightContainer>
       </BriefDetailsContainer>
     </Container>

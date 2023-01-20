@@ -28,6 +28,9 @@ export const LinkItem = styled(Link)`
         border-bottom: 1px solid lightgray;
         width: 220px;
         padding: 13px 0px;
+
+        &:hover {
+            border-bottom: 1px solid white;  }
     }
 `
 
