@@ -1,9 +1,9 @@
-import React from 'react'
+import CommonComponent from "./CommonComponent"
 
 const Todo = () => {
-  return (
-    <div>Todo</div>
-  )
+ 
+  
+  return <CommonComponent heading={'Todo'}/>
 }
 
 export default Todo

@@ -1,9 +1,9 @@
-import React from 'react'
+import CommonComponent from "./CommonComponent"
 
 const Posts = () => {
-  return (
-    <div>Posts</div>
-  )
+ 
+  
+  return <CommonComponent heading={'Posts'}/>
 }
 
 export default Posts

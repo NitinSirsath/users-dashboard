@@ -9,6 +9,8 @@ import styled from "styled-components";
 
 const LinkStyle = styled(Link)`
   text-decoration: none;
+
+  
   `
 
 const UserAccountCard = ({ user }) => {

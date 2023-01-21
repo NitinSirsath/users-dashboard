@@ -39,7 +39,15 @@ export const ProfileDetailsContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    
+    cursor: pointer;
+
+        h3{
+
+            &:hover{
+                color: darkgray;
+                transition: 0.2s;
+            }
+        }
 `
 
 export const BriefDetailsContainer = styled.div`

@@ -1,9 +1,9 @@
-import React from 'react'
+import CommonComponent from "./CommonComponent"
 
 const Gallery = () => {
-  return (
-    <div>Gallery</div>
-  )
+ 
+  
+  return <CommonComponent heading={'Gallery'}/>
 }
 
 export default Gallery

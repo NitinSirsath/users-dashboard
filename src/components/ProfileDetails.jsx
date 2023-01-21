@@ -35,7 +35,7 @@ const ProfileDetails = () => {
         <h2>Profile</h2>
         <ProfileDetailsContainer onClick={() => handleAccountSwitching()}>
           <ProfileImage background={userDetails.profilepicture}></ProfileImage>
-          <h3>{userDetails.name}</h3>
+          <h3 style={{cursor: 'pointer'}}>{userDetails.name}</h3>
           {showAccountsCard && (
             <AccountSwitchingCard currentUserDetails={userDetails} userDetails={globalUserData} />
           )}
