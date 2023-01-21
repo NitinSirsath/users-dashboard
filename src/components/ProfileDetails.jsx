@@ -99,7 +99,7 @@ const ProfileDetails = () => {
           <p><span>Long :</span> {userDetails.address.geo.lng}</p>
          </CoodinatesWrapper>
          </div>
-         {/* <ChatComponent /> */}
+         <ChatComponent userDetails={globalUserData} />
         </BriefDetailsRightContainer>
       </BriefDetailsContainer>
     </Container>
